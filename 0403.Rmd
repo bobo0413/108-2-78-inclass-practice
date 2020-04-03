@@ -1,0 +1,167 @@
+---
+title: "04/03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+vectorExample <- c(2, 6, 7)
+listExample <- list(2, 6, 7)
+
+print(vectorExample)
+print(listExample)
+```
+```{r}
+library(lubridate)
+'小明交易1'<- list( 
+  ymd_hms('2020-03-31T13:40:55Z')
+     , '一芳'
+     ,2
+     ,'水果茶')
+print('小明交易1')
+```
+```{r}
+c(
+  c('108學年第1學期','高級會計學','高等統計學'),
+  
+  c('108學年第2學期','食在拉丁美洲'))
+```
+```{r}
+`小明的課表A`<-list(
+  c('108學年第1學期','高級會計學','高等統計學'),
+  c('108學年第2學期','食在拉丁美洲'))
+print(`小明的課表A`)
+```
+```{r}
+`小明的課表B`<-list(
+  list('108學年第1學期','高級會計學','高等統計學'),
+  
+  list('108學年第2學期','食在拉丁美洲'))
+
+print(`小明的課表B`)
+```
+```{r}
+`小明的課表C`<- list(
+  
+    `上學期`=list(
+      semaster= c('108-1'),
+    courses= c('高級會計學','高等統計學')
+    ),
+  
+    `下學期`=list( 
+      semaster= c('108-2'),
+      courses= c('食在拉丁美洲')
+       )
+    )
+
+print(`小明的課表C`)
+
+```
+```{r}
+# list含兩個lists, 子層list又各含兩個vectors
+`小明108學年課表C` <- list(
+  `108學年第1學期`=list(
+    semaster=c("108-1"), # 可只寫 "108-1"
+    courses=c("高級會計學","高等統計學")
+       ),
+  `108學年第2學期`=list(
+    semaster=c("108-2"),
+    courses=c("食在拉丁美洲")
+  )
+)
+print(`小明108學年課表C`)
+```
+```{r}
+commit <- list(
+  author = list(
+    name='Martin',
+    email='mtlin@gm.ntpu.edu.tw',
+    date=ymd_hms('2020-03-25T07:17:40Z')) 
+  
+  ,
+  commiter= list(
+    name='emilyluckey',
+    email='emily007@gmail.com',
+    date=ymd_hms('2020-03-26T08:18:40Z')
+  )
+    ,
+  message= 
+    list(
+    summery='update')
+)
+print(commit)
+```
+
+```{r}
+library(jsonlite)
+toJSON(commit)
+```
+
+##學生小明，在108學年第1學期修了Alice老師所授的個體經濟學（得分85分）、Mark老師所授的總體經濟學(得分73分)。在108學年第2學期修了Jason老師所授的作業研究（得分90分）。
+```{r}
+`小明的成績` <- list(
+  `108-1`= list(
+    teacher ='Alice',
+    course= '個體經濟學',
+    grade=85,
+    teacher= 'Mark',
+    course= '總體經濟學',
+    grade=73
+  ),
+  `108-2` = list(
+    teacher= 'Jason',
+    course='作業研究',
+    grade= 90
+  )
+)
+print(`小明的成績`)
+```
+##今（“2020-03-31”）明（“2020-04-01”）「台北市」氣溫最高25度，最低18度；「新北市」氣溫最高24度，最低15度。
+
+```{r}
+'氣象預報'<-list(
+'日期'<-list(ymd('2020-03-31','2020-04-01')
+),
+'台北市'=list(
+'氣溫最高',
+25,
+'氣溫最低',
+18
+),
+
+`新北市`=list(
+'氣溫最高',
+24,
+'氣溫最低',
+15
+)
+)
+
+print('氣象預報')
+
+```
+
+
+)
